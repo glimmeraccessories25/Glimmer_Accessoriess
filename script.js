@@ -16,35 +16,25 @@
 const whatsappNumber = "201151620711";
 const selectedProducts = new Set();
 
-const productFileMap = {
-  1: "images/product1.jpeg",
-  2: "images/product2.jpeg",
-  3: "images/product3.jpeg",
-  4: "images/product4.jpeg",
-  5: "images/product5.jpeg",
-  6: "images/product6.jpeg",
-  7: "images/product7.jpeg",
-  8: "images/product8.jpeg",
-  9: "images/product9.jpeg",
-  10: "images/product10.jpeg",
-  11: "images/product11.jpeg",
-  12: "images/product12.jpeg"
-};
-
-products.forEach(product => {
-  const filePath = productFileMap[product.id];
-  if (filePath) {
-    product.image = filePath;
-  }
-});
+// Images are embedded in the `products` array as data URLs.
+// Keep those in-file data URLs and do not overwrite them with external file paths.
 
 function getProductImageLink(product) {
-  const filePath = productFileMap[product.id];
-  if (!filePath) return "";
-  if (window.location.protocol === 'file:') {
-    return filePath;
+  if (!product || !product.image) return "";
+  // If the image is already a data URL embed, return it directly.
+  if (typeof product.image === 'string' && product.image.startsWith('data:')) {
+    return product.image;
   }
-  return new URL(filePath, window.location.href).href;
+  // Otherwise treat it as a relative path and resolve to an absolute URL when not served from file://
+  if (typeof product.image === 'string') {
+    if (window.location.protocol === 'file:') return product.image;
+    try {
+      return new URL(product.image, window.location.href).href;
+    } catch (e) {
+      return product.image;
+    }
+  }
+  return '';
 }
 
 function displayProducts() {
