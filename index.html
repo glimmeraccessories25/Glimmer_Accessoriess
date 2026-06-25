@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glimmer_Accessories</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+        <div class="container nav">
+
+            <div class="logo">
+                Glimmer_Accessories
+            </div>
+
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                تألقي كل يوم ✨
+            </h1>
+
+            <p>
+                أحدث تشكيلات الإكسسوارات بأفضل جودة.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#products" class="btn">تسوق الآن</a>
+                <button id="open-custom" type="button" class="btn btn-outline">طلب مخصص</button>
+                <a href="https://wa.me/201151620711" class="btn btn-outline">واتساب</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Products -->
+
+    <section class="products" id="products">
+
+        <div class="container">
+
+            <h2>المنتجات المميزة</h2>
+
+            <div class="product-grid" id="product-grid"></div>
+
+            <div class="order-panel">
+                <h3>اطلب أكثر من منتج مرة واحدة</h3>
+                <p>حدد المنتجات التي تحبها ثم اضغط زر "اطلب المنتجات المحددة" لإرسال كل تفاصيل الطلب على واتساب.</p>
+                <button id="order-selected" type="button" class="btn">اطلب المنتجات المحددة</button>
+
+                <h3>طلب مخصص</h3>
+                <textarea id="custom-request" placeholder="اكتب طلبك المخصص هنا، مثلاً تصميم خاص أو طلب معين..."></textarea>
+                <button id="custom-order" type="button" class="btn btn-outline">إرسال الطلب الخاص <i class="fab fa-whatsapp" style="margin-inline-start:8px;"></i></button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <h2>لماذا JANA ؟</h2>
+
+            <div class="features">
+
+                <div class="feature">
+                    <i class="fas fa-gem"></i>
+                    <h3>جودة عالية</h3>
+                </div>
+
+                <div class="feature">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>شحن سريع</h3>
+                </div>
+
+                <div class="feature">
+                    <i class="fas fa-heart"></i>
+                    <h3>تصميمات عصرية</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <h2>تواصل معنا</h2>
+
+            <div class="social-buttons">
+                <a href="https://wa.me/201151620711" class="btn btn-social" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>واتساب</span>
+                </a>
+                <a href="https://www.tiktok.com/@glimmer_accessories0?_r=1&_t=ZS-97Tfa5337jN" class="btn btn-social" target="_blank" rel="noopener">
+                    <i class="fab fa-tiktok"></i>
+                    <span>تيك توك</span>
+                </a>
+                <a href="https://www.instagram.com/glimmer.accessories.1?utm_source=qr&igsh=aHlubWllNnlzeHE3" class="btn btn-social" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                    <span>إنستجرام</span>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 JANA Accessories
+        </p>
+
+    </footer>
+
+    <!-- Product Image Modal -->
+    <div id="product-modal" class="product-modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="إغلاق">&times;</button>
+            <img class="modal-img" src="" alt="">
+            <div class="modal-caption"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
